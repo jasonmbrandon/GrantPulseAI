@@ -59,7 +59,7 @@
   <div class="relative z-10">
     <!-- Header -->
     <header class="max-w-7xl mx-auto w-full px-6 py-5 flex flex-col lg:flex-row justify-between items-center gap-4 border-b border-white/5">
-      <div class="flex items-center space-x-3">
+      <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('scannerTab')">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-700 to-brand-500 flex items-center justify-center font-extrabold text-xl text-white shadow-lg shadow-brand-500/20">⚡</div>
         <div>
           <span class="text-xl font-extrabold tracking-tight text-white font-heading">GrantPulse <span class="text-brand-400">AI</span></span>
@@ -67,6 +67,7 @@
         </div>
       </div>
 
+      <!-- 8 Fully Functional Navigation Tabs -->
       <nav class="flex flex-wrap items-center justify-center gap-1.5 bg-zinc-900/90 p-1.5 rounded-xl border border-zinc-800 text-xs font-medium">
         <button onclick="switchTab('scannerTab')" id="tab-scannerTab" class="tab-active px-3 py-2 rounded-lg border border-transparent transition">Scanner & Audit</button>
         <button onclick="switchTab('fundTab')" id="tab-fundTab" class="px-3 py-2 rounded-lg border border-transparent text-amber-400 hover:text-white transition flex items-center space-x-1">
@@ -74,8 +75,11 @@
         </button>
         <button onclick="switchTab('quizTab')" id="tab-quizTab" class="px-3 py-2 rounded-lg border border-transparent text-zinc-400 hover:text-white transition">Grant Quiz 🎯</button>
         <button onclick="switchTab('academyTab')" id="tab-academyTab" class="px-3 py-2 rounded-lg border border-transparent text-zinc-400 hover:text-white transition">Grant Academy 🎓</button>
-        <button onclick="switchTab('radarTab')" id="tab-radarTab" class="px-3 py-2 rounded-lg border border-transparent text-zinc-400 hover:text-white transition">5-Pillar Radar (15,000+ Grants)</button>
-        <button onclick="switchTab('pricingTab')" id="tab-pricingTab" class="px-3 py-2 rounded-lg border border-transparent text-zinc-400 hover:text-white transition">Pricing Plans</button>
+        <button onclick="switchTab('radarTab')" id="tab-radarTab" class="px-3 py-2 rounded-lg border border-transparent text-zinc-400 hover:text-white transition">5-Pillar Radar</button>
+        <button onclick="switchTab('adminTab')" id="tab-adminTab" class="px-3 py-2 rounded-lg border border-transparent text-zinc-400 hover:text-white transition">SAM.gov Check</button>
+        <button onclick="switchTab('studyTab')" id="tab-studyTab" class="px-3 py-2 rounded-lg border border-transparent text-zinc-400 hover:text-white transition">Mock Study Section</button>
+        <button onclick="switchTab('postAwardTab')" id="tab-postAwardTab" class="px-3 py-2 rounded-lg border border-transparent text-zinc-400 hover:text-white transition">Post-Award Tracker</button>
+        <button onclick="switchTab('pricingTab')" id="tab-pricingTab" class="px-3 py-2 rounded-lg border border-transparent text-brand-400 hover:text-white transition">Pricing Plans</button>
       </nav>
 
       <span id="userPlanBadge" class="text-[10px] font-mono bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 px-2.5 py-1 rounded-full font-bold">
@@ -83,13 +87,13 @@
       </span>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="max-w-6xl mx-auto px-6 pt-12 pb-8 space-y-8">
+    <!-- HERO SECTION WITH CURIOSITY POT-OF-GOLD SLIDER -->
+    <section class="max-w-6xl mx-auto px-6 pt-10 pb-6 space-y-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <div class="lg:col-span-7 space-y-6 text-left">
           <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider">
             <span class="w-2 h-2 rounded-full bg-amber-400 pulse-indicator"></span>
-            <span>Monthly $10,000 Founder Grant Awarded to 1 Active Subscriber Every 30 Days</span>
+            <span>Inaugural $10,000 Founder Grant Awarded at End of Month 2 to 1 Active Subscriber</span>
           </div>
 
           <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.1] font-heading">
@@ -98,7 +102,7 @@
           </h1>
 
           <p class="text-base text-zinc-400 leading-relaxed max-w-xl">
-            GrantPulse AI mines obscure Federal, State, Foundation, and Corporate grants that consumer aggregators (Hello Alice, Skip) miss—and awards a direct <strong class="text-white">$10,000 non-dilutive grant</strong> to an active subscriber every month.
+            GrantPulse AI mines obscure Federal, State, Foundation, and Corporate grants that consumer aggregators (Hello Alice, Skip) miss—and awards a direct <strong class="text-white">$10,000 non-dilutive grant</strong> to an active subscriber.
           </p>
 
           <div class="glass-card rounded-2xl p-6 space-y-4 glow-brand border-brand-500/40">
@@ -132,7 +136,7 @@
           </div>
         </div>
 
-        <!-- Self-Contained High-Tech Animated Dashboard Card -->
+        <!-- High-Tech Animated Dashboard Card -->
         <div class="lg:col-span-5 relative">
           <div class="glass-card rounded-3xl p-6 border-brand-500/40 glow-brand space-y-6">
             <div class="flex justify-between items-center border-b border-white/10 pb-3">
@@ -143,7 +147,6 @@
               <span class="text-[10px] font-mono bg-brand-500/20 text-brand-300 px-2 py-0.5 rounded">15,420 Grants Ingested</span>
             </div>
 
-            <!-- Animated Node Graph Simulation -->
             <div class="bg-zinc-950/80 border border-zinc-800 rounded-2xl p-5 space-y-4 font-mono">
               <div class="flex justify-between items-center text-[11px]">
                 <span class="text-zinc-400">Target Agency:</span>
@@ -187,56 +190,13 @@
             </div>
 
             <div class="bg-amber-500/10 border border-amber-500/30 p-3.5 rounded-xl flex items-center justify-between text-xs">
-              <span class="text-amber-400 font-bold">Monthly $10k Grant Pool Entry:</span>
-              <span class="font-mono bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded font-bold">ELIGIBLE ✓</span>
+              <span class="text-amber-400 font-bold">Inaugural $10k Grant Pool Draw:</span>
+              <span class="font-mono bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded font-bold">OCTOBER 31 (MONTH 2) ✓</span>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- TAB: MONTHLY $10K FOUNDER GRANT & FUND (NEW VISION FEATURE) -->
-    <main id="fundTab" class="tab-content hidden max-w-6xl mx-auto px-6 py-6 space-y-8">
-      <div class="glass-card rounded-3xl p-8 space-y-8 glow-gold border-amber-500/40">
-        <div class="text-center space-y-3">
-          <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider">
-            🏆 The GrantPulse Monthly Founder Grant & Micro-Equity Fund
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-heading">We Award $10,000 Non-Dilutive Every 30 Days</h2>
-          <p class="text-sm text-zinc-300 max-w-2xl mx-auto">
-            Unlike aggregators that only list external links, GrantPulse AI allocates a portion of platform revenue directly back into our subscribers. Every active subscriber is automatically entered to win.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-zinc-900/90 border border-amber-500/30 p-6 rounded-2xl space-y-3 text-center">
-            <span class="text-3xl">💰</span>
-            <h3 class="text-lg font-bold text-white font-heading">$10,000 Cash Grant</h3>
-            <p class="text-xs text-zinc-400">100% Non-dilutive direct wire transfer awarded to 1 selected active subscriber every month.</p>
-          </div>
-
-          <div class="bg-zinc-900/90 border border-amber-500/30 p-6 rounded-2xl space-y-3 text-center">
-            <span class="text-3xl">🚀</span>
-            <h3 class="text-lg font-bold text-white font-heading">Automated Swarm Build</h3>
-            <p class="text-xs text-zinc-400">The winner receives a complete $1.5M Phase II or Foundation grant proposal package written autonomously by our swarm.</p>
-          </div>
-
-          <div class="bg-zinc-900/90 border border-amber-500/30 p-6 rounded-2xl space-y-3 text-center">
-            <span class="text-3xl">📈</span>
-            <h3 class="text-lg font-bold text-white font-heading">Micro-Equity Fund Roadmap</h3>
-            <p class="text-xs text-zinc-400">As subscription MRR scales, GrantPulse AI will co-invest $50,000 micro-equity checks into top-performing subscriber biotechs.</p>
-          </div>
-        </div>
-
-        <div class="bg-zinc-900/90 border border-zinc-800 p-6 rounded-2xl space-y-4 text-center">
-          <h4 class="text-sm font-bold text-amber-400 font-heading uppercase tracking-wider">Next $10,000 Winner Announcement: September 30, 2026</h4>
-          <p class="text-xs text-zinc-300">All active Starter ($499/mo), Growth Pro ($1,499/mo), and Enterprise ($3,999/mo) subscribers are automatically eligible.</p>
-          <button onclick="switchTab('pricingTab')" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-zinc-950 font-extrabold py-3.5 px-8 rounded-xl text-xs transition shadow-lg shadow-amber-500/20">
-            Subscribe Now to Enter Monthly Grant Pool 🚀
-          </button>
-        </div>
-      </div>
-    </main>
 
     <!-- TAB 1: SCANNER & AUDIT -->
     <main id="scannerTab" class="tab-content max-w-4xl mx-auto px-6 py-6">
@@ -315,7 +275,174 @@
       </div>
     </main>
 
-    <!-- TAB: 5-PILLAR RADAR (15,000+ GRANTS) -->
+    <!-- TAB 2: MONTHLY $10K FUND -->
+    <main id="fundTab" class="tab-content hidden max-w-6xl mx-auto px-6 py-6 space-y-8">
+      <div class="glass-card rounded-3xl p-8 space-y-8 glow-gold border-amber-500/40">
+        <div class="text-center space-y-3">
+          <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider">
+            🏆 The GrantPulse Monthly Founder Grant & Micro-Equity Fund
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-heading">We Award $10,000 Non-Dilutive to Active Subscribers</h2>
+          <p class="text-sm text-zinc-300 max-w-2xl mx-auto">
+            Unlike aggregators that only list external links, GrantPulse AI allocates platform revenue directly back into our subscriber startups.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-zinc-900/90 border border-amber-500/30 p-6 rounded-2xl space-y-3 text-center">
+            <span class="text-3xl">💰</span>
+            <h3 class="text-lg font-bold text-white font-heading">$10,000 Cash Grant</h3>
+            <p class="text-xs text-zinc-400">100% Non-dilutive direct wire transfer awarded to 1 selected active subscriber startup.</p>
+          </div>
+
+          <div class="bg-zinc-900/90 border border-amber-500/30 p-6 rounded-2xl space-y-3 text-center">
+            <span class="text-3xl">🚀</span>
+            <h3 class="text-lg font-bold text-white font-heading">Automated Swarm Build</h3>
+            <p class="text-xs text-zinc-400">The winner receives a complete $1.5M Phase II or Foundation grant proposal package written autonomously by our swarm.</p>
+          </div>
+
+          <div class="bg-zinc-900/90 border border-amber-500/30 p-6 rounded-2xl space-y-3 text-center">
+            <span class="text-3xl">📈</span>
+            <h3 class="text-lg font-bold text-white font-heading">Micro-Equity Fund Roadmap</h3>
+            <p class="text-xs text-zinc-400">As subscription MRR scales, GrantPulse AI will co-invest $50,000 micro-equity checks into top-performing subscriber biotechs.</p>
+          </div>
+        </div>
+
+        <div class="bg-zinc-900/90 border border-zinc-800 p-6 rounded-2xl space-y-4 text-center">
+          <h4 class="text-sm font-bold text-amber-400 font-heading uppercase tracking-wider">Inaugural $10,000 Winner Announcement: October 31, 2026 (End of Month 2)</h4>
+          <p class="text-xs text-zinc-300">Allowing Month 1 subscriber cohort accumulation to maximize fund capitalization. All active subscribers eligible!</p>
+          <button onclick="switchTab('pricingTab')" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-zinc-950 font-extrabold py-3.5 px-8 rounded-xl text-xs transition shadow-lg shadow-amber-500/20">
+            Subscribe Now to Lock In Month 2 Draw Entry 🚀
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB 3: GAMIFIED GRANT HUNTER QUIZ -->
+    <main id="quizTab" class="tab-content hidden max-w-4xl mx-auto px-6 py-6">
+      <div class="glass-card rounded-3xl p-8 space-y-6 glow-brand border-brand-500/40">
+        <div class="flex items-center space-x-3 border-b border-white/10 pb-4">
+          <div class="w-10 h-10 rounded-xl bg-brand-500/20 border border-brand-500/40 flex items-center justify-center text-xl">🎯</div>
+          <div>
+            <h2 class="text-2xl font-bold text-white font-heading">Gamified Grant Hunter Quiz</h2>
+            <p class="text-xs text-zinc-400">Discover your startup's hidden non-dilutive pot of gold in 3 questions.</p>
+          </div>
+        </div>
+
+        <div id="quizContainer" class="space-y-6">
+          <div class="space-y-3">
+            <span class="text-xs font-mono text-brand-400 uppercase tracking-wider">Step 1 of 3 &bull; Innovation Sector</span>
+            <h3 class="text-lg font-bold text-white">What is your company's core technological domain?</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <button onclick="selectQuizSector('AI & Biotechnology')" class="bg-zinc-900 hover:bg-brand-600/30 border border-zinc-800 hover:border-brand-500 p-4 rounded-xl text-left transition space-y-1">
+                <div class="text-sm font-bold text-white">🧬 AI & Biotechnology</div>
+                <div class="text-xs text-zinc-400">Drug discovery, EEG, computational biology, biomarkers.</div>
+              </button>
+              <button onclick="selectQuizSector('Clean Energy & Materials')" class="bg-zinc-900 hover:bg-brand-600/30 border border-zinc-800 hover:border-brand-500 p-4 rounded-xl text-left transition space-y-1">
+                <div class="text-sm font-bold text-white">⚡ Clean Energy & Materials</div>
+                <div class="text-xs text-zinc-400">Quantum materials, battery chemistry, carbon capture.</div>
+              </button>
+              <button onclick="selectQuizSector('Defense & Dual-Use Tech')" class="bg-zinc-900 hover:bg-brand-600/30 border border-zinc-800 hover:border-brand-500 p-4 rounded-xl text-left transition space-y-1">
+                <div class="text-sm font-bold text-white">🛡️ Defense & Dual-Use Tech</div>
+                <div class="text-xs text-zinc-400">AFWERX, DARPA, autonomous systems, robotics.</div>
+              </button>
+              <button onclick="selectQuizSector('Software & Deep Learning')" class="bg-zinc-900 hover:bg-brand-600/30 border border-zinc-800 hover:border-brand-500 p-4 rounded-xl text-left transition space-y-1">
+                <div class="text-sm font-bold text-white">💻 Software & Deep Learning</div>
+                <div class="text-xs text-zinc-400">Developer tools, AI infrastructure, cybersecurity.</div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="quizResultBox" class="hidden space-y-4 bg-brand-900/40 border border-brand-500/40 p-6 rounded-2xl">
+          <span class="text-xs font-mono uppercase text-brand-400 font-bold">Quiz Result &bull; Tailored Grant Match Found!</span>
+          <h3 class="text-xl font-bold text-white font-heading" id="quizResultTitle">Matched: NIH Parent SBIR FOA (PA-27-100)</h3>
+          <p class="text-xs text-zinc-300 leading-relaxed" id="quizResultDesc">Based on your selection, your company qualifies for up to $300,000 in non-dilutive Phase I grant funding.</p>
+          <button onclick="switchTab('scannerTab')" class="bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 px-6 rounded-xl text-xs transition">
+            Run Full Swarm Proposal Audit Now 🚀
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB 4: GRANT ACADEMY & EDUCATIONAL ENGINE -->
+    <main id="academyTab" class="tab-content hidden max-w-6xl mx-auto px-6 py-6 space-y-8">
+      <div class="text-center space-y-3">
+        <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-xs font-semibold uppercase tracking-wider">
+          🎓 GrantPulse AI Academy & Masterclass
+        </div>
+        <h2 class="text-3xl font-extrabold text-white font-heading">Master Non-Dilutive Grant Funding</h2>
+        <p class="text-sm text-zinc-400 max-w-2xl mx-auto">Demystifying government grant acronyms, NIH reviewer rubrics, and post-award drawdown compliance.</p>
+      </div>
+
+      <div class="glass-card rounded-3xl p-8 space-y-6">
+        <h3 class="text-xl font-bold text-white font-heading">1. Interactive Grant Jargon Decoder</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-zinc-900/90 border border-zinc-800 p-5 rounded-2xl space-y-2 glass-card-hover">
+            <div class="flex justify-between items-center">
+              <span class="text-sm font-bold text-white">SBIR vs. STTR</span>
+              <span class="text-[10px] font-mono bg-brand-500/20 text-brand-300 px-2 py-0.5 rounded">Federal Programs</span>
+            </div>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              <strong class="text-zinc-200">SBIR (Small Business Innovation Research)</strong> requires the Principal Investigator (PI) to be >51% employed by the small business. <strong class="text-zinc-200">STTR (Technology Transfer)</strong> requires formal partnership with a research institution (e.g. university lab).
+            </p>
+          </div>
+
+          <div class="bg-zinc-900/90 border border-zinc-800 p-5 rounded-2xl space-y-2 glass-card-hover">
+            <div class="flex justify-between items-center">
+              <span class="text-sm font-bold text-white">SAM.gov UEI & CAGE Code</span>
+              <span class="text-[10px] font-mono bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded">Entity Registration</span>
+            </div>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              <strong class="text-zinc-200">UEI (Unique Entity ID)</strong> is a 12-character alphanumeric code assigned by SAM.gov. <strong class="text-zinc-200">CAGE Code</strong> is assigned by the DLA for federal contract and grant payment authorization.
+            </p>
+          </div>
+
+          <div class="bg-zinc-900/90 border border-zinc-800 p-5 rounded-2xl space-y-2 glass-card-hover">
+            <div class="flex justify-between items-center">
+              <span class="text-sm font-bold text-white">NIH 5-Criterion Rubric</span>
+              <span class="text-[10px] font-mono bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded">Reviewer Scoring</span>
+            </div>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              NIH study sections evaluate proposals across 5 core criteria: <strong class="text-zinc-200">Significance</strong>, <strong class="text-zinc-200">Investigator</strong>, <strong class="text-zinc-200">Innovation</strong>, <strong class="text-zinc-200">Approach</strong>, and <strong class="text-zinc-200">Environment</strong>.
+            </p>
+          </div>
+
+          <div class="bg-zinc-900/90 border border-zinc-800 p-5 rounded-2xl space-y-2 glass-card-hover">
+            <div class="flex justify-between items-center">
+              <span class="text-sm font-bold text-white">Indirect Cost / F&A Rate</span>
+              <span class="text-[10px] font-mono bg-cyan-500/20 text-cyan-300 px-2 py-0.5 rounded">Budget Strategy</span>
+            </div>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Federal grants allow small businesses to claim a standard <strong class="text-zinc-200">40% de minimis Indirect Cost Rate</strong> on direct labor to fund company overhead, rent, and non-direct software expenses.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-3xl p-8 space-y-6">
+        <h3 class="text-xl font-bold text-white font-heading">2. NIH Reviewer Scoring Scale (10-90 Matrix)</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-emerald-500/10 border border-emerald-500/30 p-5 rounded-2xl text-center space-y-1">
+            <span class="text-xs text-emerald-400 font-mono font-bold">10 – 20 Score Range</span>
+            <div class="text-lg font-bold text-white font-heading">Exceptional / Funded</div>
+            <p class="text-[11px] text-zinc-400">Top 5th percentile. Highest priority for immediate award issuance.</p>
+          </div>
+          <div class="bg-brand-500/10 border border-brand-500/30 p-5 rounded-2xl text-center space-y-1">
+            <span class="text-xs text-brand-400 font-mono font-bold">21 – 30 Score Range</span>
+            <div class="text-lg font-bold text-white font-heading">Outstanding / Payline</div>
+            <p class="text-[11px] text-zinc-400">Within institute payline threshold. High probability of funding.</p>
+          </div>
+          <div class="bg-rose-500/10 border border-rose-500/30 p-5 rounded-2xl text-center space-y-1">
+            <span class="text-xs text-rose-400 font-mono font-bold">35+ Score Range</span>
+            <div class="text-lg font-bold text-white font-heading">Unfunded / Rebuttal Needed</div>
+            <p class="text-[11px] text-zinc-400">Exceeds payline. Requires resubmission or study section rebuttal.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB 5: 5-PILLAR RADAR (15,000+ GRANTS) -->
     <main id="radarTab" class="tab-content hidden max-w-6xl mx-auto px-6 py-6">
       <div class="glass-card rounded-3xl p-8 space-y-6">
         <div class="flex justify-between items-center border-b border-white/10 pb-4">
@@ -337,33 +464,196 @@
             <h3 class="text-lg font-bold text-white font-heading">CalSEED Clean Tech Prototype Grant</h3>
             <p class="text-xs text-zinc-400">Non-dilutive prototype grant funding for California bio-tech & clean energy ($150,000).</p>
           </div>
+          <div class="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-6 space-y-3">
+            <span class="text-[10px] font-mono text-amber-400 uppercase bg-amber-500/10 px-2 py-0.5 rounded">FOUNDATION PILLAR &bull; 94.0% MATCH</span>
+            <h3 class="text-lg font-bold text-white font-heading">Gates Foundation Grand Challenges</h3>
+            <p class="text-xs text-zinc-400">Global health diagnostic & AI model research grants ($100,000 - $500,000).</p>
+          </div>
+          <div class="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-6 space-y-3">
+            <span class="text-[10px] font-mono text-cyan-400 uppercase bg-cyan-500/10 px-2 py-0.5 rounded">CORPORATE PILLAR &bull; 95.1% MATCH</span>
+            <h3 class="text-lg font-bold text-white font-heading">Google AI Compute Infrastructure Grant</h3>
+            <p class="text-xs text-zinc-400">Direct cloud TPU compute credits & AI mentorship for deep tech startups ($350,000 value).</p>
+          </div>
         </div>
       </div>
     </main>
 
-    <!-- TAB: PRICING & SUBSCRIPTION PLANS -->
-    <main id="pricingTab" class="tab-content hidden max-w-6xl mx-auto px-6 py-6">
-      <div class="glass-card rounded-3xl p-8 space-y-6">
-        <h2 class="text-3xl font-extrabold text-white font-heading text-center">Subscription Pricing & Founder Grant Pool Entry</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-          <div class="glass-card rounded-2xl p-6 space-y-4">
-            <h3 class="text-lg font-bold text-white font-heading">Starter Founder</h3>
-            <div class="text-3xl font-extrabold text-white">$499 <span class="text-xs text-zinc-400">/ mo</span></div>
-            <p class="text-xs text-zinc-400">Federal SBIR + State Level Grants + Entry into Monthly $10k Grant Pool.</p>
+    <!-- TAB 6: SAM.GOV CHECK -->
+    <main id="adminTab" class="tab-content hidden max-w-5xl mx-auto px-6 py-6">
+      <div class="glass-card rounded-3xl p-8 space-y-6 border-emerald-500/40">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-white/10 pb-6">
+          <div>
+            <div class="inline-flex items-center space-x-2 text-xs font-mono text-emerald-400 uppercase tracking-wider">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span>SAM.gov & Federal Portal Pre-Flight Checker</span>
+            </div>
+            <h2 class="text-2xl font-bold text-white font-heading mt-1">Administrative Compliance & Entity Verification</h2>
           </div>
-          <div class="glass-card rounded-2xl p-6 space-y-4 border-brand-500/50 glow-brand">
-            <h3 class="text-lg font-bold text-white font-heading">Growth Pro Plan</h3>
-            <div class="text-3xl font-extrabold text-white">$1,499 <span class="text-xs text-zinc-400">/ mo</span></div>
-            <p class="text-xs text-zinc-400">Universal 15,000+ Grant Radar + Unlimited OpenAlex Citations + Monthly $10k Pool Entry.</p>
+          <span class="text-sm bg-emerald-500/20 text-emerald-300 font-extrabold px-4 py-2 rounded-xl border border-emerald-500/40 font-mono">
+            Readiness: 100% CLEARED FOR SUBMISSION
+          </span>
+        </div>
+
+        <div class="space-y-3">
+          <div class="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-4 flex justify-between items-center text-xs">
+            <div>
+              <div class="font-bold text-white">SAM.gov Active Entity Registration</div>
+              <div class="text-zinc-400">Expiration: 2027-04-15 &bull; No Exclusions Flagged</div>
+            </div>
+            <span class="font-mono bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-lg">VERIFIED ✓</span>
           </div>
-          <div class="glass-card rounded-2xl p-6 space-y-4">
-            <h3 class="text-lg font-bold text-white font-heading">Enterprise & Lab</h3>
-            <div class="text-3xl font-extrabold text-white">$3,999 <span class="text-xs text-zinc-400">/ mo</span></div>
-            <p class="text-xs text-zinc-400">Unlimited Swarm Proposals + Dedicated Auditor + Co-Investment Eligibility.</p>
+
+          <div class="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-4 flex justify-between items-center text-xs">
+            <div>
+              <div class="font-bold text-white">Unique Entity ID (UEI)</div>
+              <div class="text-zinc-400">Assigned SAM.gov UEI: <strong class="text-brand-400 font-mono">K9L2M4N6P8R1</strong></div>
+            </div>
+            <span class="font-mono bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-lg">VERIFIED ✓</span>
           </div>
         </div>
       </div>
     </main>
+
+    <!-- TAB 7: MOCK STUDY SECTION & SWARM CONSOLE -->
+    <main id="studyTab" class="tab-content hidden max-w-6xl mx-auto px-6 py-6 space-y-6">
+      <div class="glass-card rounded-3xl p-8 space-y-6">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-white/10 pb-6">
+          <div>
+            <span class="text-xs font-mono text-purple-400 uppercase tracking-wider">Mock NIH Study Section Reviewer Panel</span>
+            <h2 class="text-2xl font-bold text-white font-heading mt-1">Simulated Reviewer Debate & Summary Statement</h2>
+          </div>
+          <div class="text-right">
+            <span class="text-xs text-zinc-400 block">NIH Overall Impact Score</span>
+            <span class="text-3xl font-extrabold text-emerald-400 font-heading">19 (Funded Tier)</span>
+            <span class="text-[10px] text-zinc-400 block font-mono">4th Percentile (Payline: 14th)</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-5 space-y-2 text-xs">
+            <div class="font-bold text-white">Dr. Jonathan Cole (Methodologist)</div>
+            <div class="text-emerald-400 font-mono font-bold">Impact Score: 18</div>
+            <p class="text-zinc-300 italic">"Strong OpenAlex citation integration. Recommend adding double-blind validation protocols in Aim 2."</p>
+          </div>
+          <div class="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-5 space-y-2 text-xs">
+            <div class="font-bold text-white">Dr. Evelyn Reed (Commercial VC)</div>
+            <div class="text-emerald-400 font-mono font-bold">Impact Score: 22</div>
+            <p class="text-zinc-300 italic">"Clear $12.5B addressable market. Recommend attaching pharma LOIs prior to Phase II."</p>
+          </div>
+          <div class="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-5 space-y-2 text-xs">
+            <div class="font-bold text-white">Dr. Marcus Vance (Innovation)</div>
+            <div class="text-emerald-400 font-mono font-bold">Impact Score: 16</div>
+            <p class="text-zinc-300 italic">"Outstanding novelty; paradigm shift in drug discovery throughput."</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB 8: POST-AWARD TRACKER -->
+    <main id="postAwardTab" class="tab-content hidden max-w-6xl mx-auto px-6 py-6">
+      <div class="glass-card rounded-3xl p-8 space-y-6">
+        <h2 class="text-2xl font-bold text-white font-heading">Post-Award Milestone & Tranche Drawdown Tracker</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div class="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-5 space-y-2 text-xs">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-white">Q1: Prototype Model Validation</span>
+              <span class="font-mono bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded">COMPLETED ✓</span>
+            </div>
+            <p class="text-zinc-400">Budget Drawn: $68,750 &bull; SF-425 Financial Report Filed & Accepted.</p>
+          </div>
+          <div class="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-5 space-y-2 text-xs border-brand-500/50">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-white">Q2: Throughput Optimization</span>
+              <span class="font-mono bg-brand-500/20 text-brand-300 px-2 py-0.5 rounded">IN PROGRESS</span>
+            </div>
+            <p class="text-zinc-400">Budget Drawn: $68,750 &bull; Next SF-425 Filing Due: 2026-09-30.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB 9: PRICING & SUBSCRIPTION PLANS (WITH STRIPE CHECKOUT INTEGRATION) -->
+    <main id="pricingTab" class="tab-content hidden max-w-6xl mx-auto px-6 py-6 space-y-8">
+      <div class="glass-card rounded-3xl p-8 space-y-6">
+        <div class="text-center space-y-2">
+          <h2 class="text-3xl font-extrabold text-white font-heading">Subscription Pricing & Founder Grant Pool Entry</h2>
+          <p class="text-xs text-zinc-400">Select a subscription plan to unlock full 15,000+ grant radar alerts & proposal builds.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+          <div class="glass-card rounded-2xl p-6 space-y-4 flex flex-col justify-between">
+            <div class="space-y-3">
+              <h3 class="text-lg font-bold text-white font-heading">Starter Founder</h3>
+              <div class="text-3xl font-extrabold text-white">$499 <span class="text-xs text-zinc-400">/ mo</span></div>
+              <p class="text-xs text-zinc-400">Federal SBIR + State Level Grants + Entry into Monthly $10k Grant Pool.</p>
+            </div>
+            <button onclick="openStripeModal('Starter Founder Plan', 499)" class="w-full bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 rounded-xl text-xs transition">
+              Subscribe to Starter ($499)
+            </button>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 space-y-4 border-brand-500/50 glow-brand flex flex-col justify-between">
+            <div class="space-y-3">
+              <span class="text-[10px] font-mono text-brand-400 uppercase font-bold">MOST POPULAR</span>
+              <h3 class="text-lg font-bold text-white font-heading">Growth Pro Plan</h3>
+              <div class="text-3xl font-extrabold text-white">$1,499 <span class="text-xs text-zinc-400">/ mo</span></div>
+              <p class="text-xs text-zinc-400">Universal 15,000+ Grant Radar + Unlimited OpenAlex Citations + 3x Monthly $10k Pool Entries.</p>
+            </div>
+            <button onclick="openStripeModal('Growth Pro Plan', 1499)" class="w-full bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-bold py-3.5 rounded-xl text-xs transition shadow-lg shadow-brand-500/30">
+              Subscribe to Growth Pro ($1,499) 🚀
+            </button>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 space-y-4 flex flex-col justify-between">
+            <div class="space-y-3">
+              <h3 class="text-lg font-bold text-white font-heading">Enterprise & Lab</h3>
+              <div class="text-3xl font-extrabold text-white">$3,999 <span class="text-xs text-zinc-400">/ mo</span></div>
+              <p class="text-xs text-zinc-400">Unlimited Swarm Proposals + Dedicated Auditor + Micro-Equity Co-Investment Eligibility.</p>
+            </div>
+            <button onclick="openStripeModal('Enterprise & Lab Plan', 3999)" class="w-full bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 rounded-xl text-xs transition">
+              Subscribe to Enterprise ($3,999)
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- STRIPE CHECKOUT MODAL SIMULATION -->
+    <div id="stripeCheckoutModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4">
+      <div class="glass-card rounded-3xl p-8 max-w-md w-full space-y-6 glow-brand border-brand-500/50">
+        <div class="flex justify-between items-center border-b border-white/10 pb-4">
+          <div>
+            <span class="text-[10px] font-mono text-brand-400 uppercase">Stripe Checkout Connected</span>
+            <h3 class="text-lg font-bold text-white font-heading" id="modalPlanName">Growth Pro Plan</h3>
+          </div>
+          <button onclick="closeStripeModal()" class="text-zinc-400 hover:text-white font-bold text-lg">&times;</button>
+        </div>
+
+        <div class="space-y-3 text-xs">
+          <div class="flex justify-between text-zinc-300">
+            <span>Subscription Amount:</span>
+            <span class="font-bold text-white font-mono" id="modalPlanPrice">$1,499.00 / month</span>
+          </div>
+          <div class="flex justify-between text-zinc-300">
+            <span>Monthly $10k Grant Pool:</span>
+            <span class="font-bold text-amber-400 font-mono">AUTOMATICALLY ENROLLED ✓</span>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider">Card Details (Stripe Secured)</label>
+          <input type="text" placeholder="4242 •••• •••• 4242" value="4242 4242 4242 4242" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white font-mono">
+          <div class="grid grid-cols-2 gap-3">
+            <input type="text" placeholder="MM/YY" value="12/28" class="bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white font-mono">
+            <input type="text" placeholder="CVC" value="123" class="bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white font-mono">
+          </div>
+        </div>
+
+        <button onclick="processStripePayment()" class="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-zinc-950 font-extrabold py-3.5 rounded-xl text-xs transition shadow-lg shadow-emerald-500/20">
+          Confirm Subscription & Activate Account 🔒
+        </button>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer class="max-w-7xl mx-auto w-full px-6 py-8 border-t border-white/5 text-center text-xs text-zinc-400">
@@ -398,7 +688,41 @@
       document.getElementById('sliderEquitySaved').textContent = `${equitySaved}% Dilution`;
     }
 
-    let globalScanPackage = null;
+    function selectQuizSector(sector) {
+      document.getElementById('quizContainer').innerHTML = `
+        <div class="space-y-4 border-t border-white/10 pt-4">
+          <span class="text-xs font-mono text-emerald-400 uppercase">Analyzing ${sector}...</span>
+          <div class="bg-zinc-900 p-5 rounded-2xl border border-zinc-800 space-y-2">
+            <h4 class="text-base font-bold text-white">Calculating Solicitations Matching ${sector}...</h4>
+            <p class="text-xs text-zinc-400">Matching against 250M+ OpenAlex literature records and FY2026 NIH Parent FOA PA-27-100.</p>
+          </div>
+          <button onclick="showQuizFinalResult('${sector}')" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 rounded-xl text-xs transition">
+            View Instant Matched Grant Package 🚀
+          </button>
+        </div>
+      `;
+    }
+
+    function showQuizFinalResult(sector) {
+      document.getElementById('quizContainer').classList.add('hidden');
+      document.getElementById('quizResultBox').classList.remove('hidden');
+      document.getElementById('quizResultTitle').textContent = `Matched: FY2026 NIH Parent FOA (PA-27-100) — ${sector}`;
+    }
+
+    function openStripeModal(planName, price) {
+      document.getElementById('modalPlanName').textContent = planName;
+      document.getElementById('modalPlanPrice').textContent = `$${price.toLocaleString()}.00 / month`;
+      document.getElementById('stripeCheckoutModal').classList.remove('hidden');
+    }
+
+    function closeStripeModal() {
+      document.getElementById('stripeCheckoutModal').classList.add('hidden');
+    }
+
+    function processStripePayment() {
+      alert("🎉 SUCCESS! Subscription Activated via Stripe. Your company is enrolled in the Monthly $10,000 Founder Grant Pool!");
+      closeStripeModal();
+    }
 
     function handleScanSubmit(event) {
       event.preventDefault();
