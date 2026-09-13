@@ -76,6 +76,9 @@
         </button>
         <button onclick="switchTab('quizTab')" id="tab-quizTab" class="px-3 py-2 rounded-lg border border-transparent text-zinc-400 hover:text-white transition">Grant Quiz 🎯</button>
         <button onclick="switchTab('academyTab')" id="tab-academyTab" class="px-3 py-2 rounded-lg border border-transparent text-zinc-400 hover:text-white transition">Grant Academy 🎓</button>
+        <button onclick="switchTab('govContractTab')" id="tab-govContractTab" class="px-3 py-2 rounded-lg border border-transparent text-emerald-400 hover:text-white transition flex items-center space-x-1">
+          <span>Gov Contracting & Vault 🏛️</span>
+        </button>
         <button onclick="switchTab('radarTab')" id="tab-radarTab" class="px-3 py-2 rounded-lg border border-transparent text-zinc-400 hover:text-white transition">5-Pillar Radar</button>
         <button onclick="switchTab('adminTab')" id="tab-adminTab" class="px-3 py-2 rounded-lg border border-transparent text-zinc-400 hover:text-white transition">SAM.gov Check</button>
         <button onclick="switchTab('studyTab')" id="tab-studyTab" class="px-3 py-2 rounded-lg border border-transparent text-zinc-400 hover:text-white transition">Mock Study Section</button>
@@ -454,7 +457,7 @@
           <span class="text-xs bg-brand-500/20 text-brand-300 px-3 py-1 rounded-lg border border-brand-500/40 font-mono">15,420 Grants Indexed</span>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           <div class="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-6 space-y-3">
             <span class="text-[10px] font-mono text-emerald-400 uppercase bg-emerald-500/10 px-2 py-0.5 rounded">FEDERAL PILLAR &bull; 97.4% MATCH</span>
             <h3 class="text-lg font-bold text-white font-heading">NIH Parent SBIR FOA (PA-27-100)</h3>
@@ -474,6 +477,16 @@
             <span class="text-[10px] font-mono text-cyan-400 uppercase bg-cyan-500/10 px-2 py-0.5 rounded">CORPORATE PILLAR &bull; 95.1% MATCH</span>
             <h3 class="text-lg font-bold text-white font-heading">Google AI Compute Infrastructure Grant</h3>
             <p class="text-xs text-zinc-400">Direct cloud TPU compute credits & AI mentorship for deep tech startups ($350,000 value).</p>
+          </div>
+          <div class="bg-zinc-900/90 border border-amber-500/40 rounded-2xl p-6 space-y-3 glow-gold">
+            <span class="text-[10px] font-mono text-amber-400 uppercase bg-amber-500/10 px-2 py-0.5 rounded">MICRO-GRANT PILLAR &bull; 99.1% MATCH</span>
+            <h3 class="text-lg font-bold text-white font-heading">Verizon Small Business Digital Grant</h3>
+            <p class="text-xs text-zinc-400">$10,000 direct cash grant for EIN holders & small businesses. Simple online application requiring EIN (No SSN).</p>
+          </div>
+          <div class="bg-zinc-900/90 border border-purple-500/40 rounded-2xl p-6 space-y-3">
+            <span class="text-[10px] font-mono text-purple-400 uppercase bg-purple-500/10 px-2 py-0.5 rounded">FOUNDER MICRO-GRANT &bull; 98.6% MATCH</span>
+            <h3 class="text-lg font-bold text-white font-heading">Amber, Galaxy, Nav & SecretSOS Grants</h3>
+            <p class="text-xs text-zinc-400">Monthly micro-grants ranging from $1,000 to $25,000 (Skip Growth, AI Impact, Awesome, & Firepot Fund).</p>
           </div>
         </div>
       </div>
@@ -588,8 +601,8 @@
               <div class="text-3xl font-extrabold text-white">$499 <span class="text-xs text-zinc-400">/ mo</span></div>
               <p class="text-xs text-zinc-400">Federal SBIR + State Level Grants + Entry into Monthly $10k Grant Pool.</p>
             </div>
-            <button onclick="openStripeModal('Starter Founder Plan', 499)" class="w-full bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 rounded-xl text-xs transition">
-              Subscribe to Starter ($499)
+            <button onclick="window.open('https://buy.stripe.com/3cI28q6cH9g294e06zb7y00', '_blank')" class="w-full bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 rounded-xl text-xs transition">
+              Subscribe to Starter ($499) 🔒
             </button>
           </div>
 
@@ -600,8 +613,8 @@
               <div class="text-3xl font-extrabold text-white">$1,499 <span class="text-xs text-zinc-400">/ mo</span></div>
               <p class="text-xs text-zinc-400">Universal 15,000+ Grant Radar + Unlimited OpenAlex Citations + 3x Monthly $10k Pool Entries.</p>
             </div>
-            <button onclick="openStripeModal('Growth Pro Plan', 1499)" class="w-full bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-bold py-3.5 rounded-xl text-xs transition shadow-lg shadow-brand-500/30">
-              Subscribe to Growth Pro ($1,499) 🚀
+            <button onclick="window.open('https://buy.stripe.com/3cIcN49oT77Udku4mPb7y01', '_blank')" class="w-full bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-bold py-3.5 rounded-xl text-xs transition shadow-lg shadow-brand-500/30">
+              Subscribe to Growth Pro ($1,499) 🚀 🔒
             </button>
           </div>
 
@@ -611,9 +624,213 @@
               <div class="text-3xl font-extrabold text-white">$3,999 <span class="text-xs text-zinc-400">/ mo</span></div>
               <p class="text-xs text-zinc-400">Unlimited Swarm Proposals + Dedicated Auditor + Micro-Equity Co-Investment Eligibility.</p>
             </div>
-            <button onclick="openStripeModal('Enterprise & Lab Plan', 3999)" class="w-full bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 rounded-xl text-xs transition">
-              Subscribe to Enterprise ($3,999)
+            <button onclick="window.open('https://buy.stripe.com/5kQfZg7gLboadku9H9b7y02', '_blank')" class="w-full bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 rounded-xl text-xs transition">
+              Subscribe to Enterprise ($3,999) 🔒
             </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- TAB: GOV CONTRACTING & YOUTUBE EXPERTS VAULT -->
+    <main id="govContractTab" class="tab-content hidden max-w-6xl mx-auto px-6 py-6 pt-12 space-y-8">
+      <!-- Section Header -->
+      <div class="glass-card rounded-3xl p-8 border-emerald-500/40 glow-brand space-y-6">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-white/10 pb-6">
+          <div>
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-semibold uppercase tracking-wider">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-indicator"></span>
+              <span>YouTube Expert Insights & Government Contracting Blueprint</span>
+            </div>
+            <h2 class="text-3xl font-extrabold text-white font-heading mt-2">
+              Grant Writing Mastery & <span class="gold-gradient-text">Government Contracting Vault</span>
+            </h2>
+            <p class="text-xs text-zinc-400 mt-1 max-w-2xl">
+              Synthesized playbooks from leading YouTube grant experts (Skip, Rodney Walker, Amber Wynn, Kizzy Parks, Eric Coffey) paired with GrantPulse AI's self-improving grant writing rules and SAM.gov contracting engine.
+            </p>
+          </div>
+          <span class="text-xs font-mono bg-emerald-500/20 text-emerald-300 px-4 py-2 rounded-xl border border-emerald-500/40 font-bold">
+            100% Free Member Resource Vault 🏛️
+          </span>
+        </div>
+
+        <!-- YOUTUBE EXPERTS GRID -->
+        <div class="space-y-4">
+          <h3 class="text-lg font-bold text-white font-heading flex items-center space-x-2">
+            <span>📺 Top YouTube Grant & Government Contracting Experts</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+            <!-- Expert 1: Skip -->
+            <div class="bg-zinc-900/90 border border-zinc-800 p-5 rounded-2xl space-y-3 glass-card-hover">
+              <div class="flex justify-between items-center">
+                <span class="text-sm font-bold text-white">Skip / Hello Skip</span>
+                <span class="text-[10px] font-mono bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded">300k+ Subs</span>
+              </div>
+              <p class="text-xs text-zinc-400 leading-relaxed">
+                <strong class="text-zinc-200">Micro-Grant Radar & Speed:</strong> Monitors daily state/local micro-grants ($1k-$25k). 60% of micro-grants have submission caps—speed is crucial. Always apply within 24h of opening.
+              </p>
+              <div class="text-[11px] text-amber-400 font-mono">Tip: 60s optional video submissions increase win rate by 3x.</div>
+            </div>
+
+            <!-- Expert 2: Rodney Walker -->
+            <div class="bg-zinc-900/90 border border-zinc-800 p-5 rounded-2xl space-y-3 glass-card-hover">
+              <div class="flex justify-between items-center">
+                <span class="text-sm font-bold text-white">Rodney Walker</span>
+                <span class="text-[10px] font-mono bg-brand-500/20 text-brand-300 px-2 py-0.5 rounded">Grant Central USA</span>
+              </div>
+              <p class="text-xs text-zinc-400 leading-relaxed">
+                <strong class="text-zinc-200">Scoring Rubric Synchronization:</strong> Mirror the funder's exact RFP headers in your proposal. Synchronize every line item budget request directly with a stated project milestone.
+              </p>
+              <div class="text-[11px] text-brand-400 font-mono">Tip: Always claim the 40% de minimis Indirect Overhead Rate.</div>
+            </div>
+
+            <!-- Expert 3: Amber Wynn -->
+            <div class="bg-zinc-900/90 border border-zinc-800 p-5 rounded-2xl space-y-3 glass-card-hover">
+              <div class="flex justify-between items-center">
+                <span class="text-sm font-bold text-white">Amber Wynn</span>
+                <span class="text-[10px] font-mono bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded">Philanthrepreneur</span>
+              </div>
+              <p class="text-xs text-zinc-400 leading-relaxed">
+                <strong class="text-zinc-200">The 5-W Narrative Framework:</strong> Who you serve, What problem is solved, Where impact occurs, When milestones hit, Why your team is uniquely qualified.
+              </p>
+              <div class="text-[11px] text-purple-400 font-mono">Tip: Replace vague descriptions with hard SMART metrics.</div>
+            </div>
+
+            <!-- Expert 4: Kizzy Parks -->
+            <div class="bg-zinc-900/90 border border-zinc-800 p-5 rounded-2xl space-y-3 glass-card-hover">
+              <div class="flex justify-between items-center">
+                <span class="text-sm font-bold text-white">Kizzy Parks</span>
+                <span class="text-[10px] font-mono bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded">GovCon Guru ($100M+)</span>
+              </div>
+              <p class="text-xs text-zinc-400 leading-relaxed">
+                <strong class="text-zinc-200">$10,000 Micro-Purchases:</strong> Federal agencies can buy up to $10,000 using Government Purchase Cards (GPC) without public bidding. Position SAM.gov vendors directly for GPC orders.
+              </p>
+              <div class="text-[11px] text-emerald-400 font-mono">Tip: Pitch agencies directly with a 1-Page Capability Statement.</div>
+            </div>
+
+            <!-- Expert 5: Eric Coffey -->
+            <div class="bg-zinc-900/90 border border-zinc-800 p-5 rounded-2xl space-y-3 glass-card-hover">
+              <div class="flex justify-between items-center">
+                <span class="text-sm font-bold text-white">GovCon Giants (Eric Coffey)</span>
+                <span class="text-[10px] font-mono bg-cyan-500/20 text-cyan-300 px-2 py-0.5 rounded">GovCon Strategy</span>
+              </div>
+              <p class="text-xs text-zinc-400 leading-relaxed">
+                <strong class="text-zinc-200">SBA Set-Asides & SubNet:</strong> Leverage 8(a), WOSB, SDVOSB, and HUBZone set-asides (23% federal goal). Subcontract with Prime Contractors on SBA SubNet to build past performance.
+              </p>
+              <div class="text-[11px] text-cyan-400 font-mono">Tip: Teaming agreements accelerate federal contract wins.</div>
+            </div>
+
+            <!-- Expert 6: GrantPulse System Rules -->
+            <div class="bg-zinc-900/90 border border-emerald-500/40 p-5 rounded-2xl space-y-3 glow-gold">
+              <div class="flex justify-between items-center">
+                <span class="text-sm font-bold text-white">GrantPulse AI System Rules</span>
+                <span class="text-[10px] font-mono bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded">Autonomous Engine</span>
+              </div>
+              <p class="text-xs text-zinc-400 leading-relaxed">
+                Our AI continuously incorporates these expert rules into every generated grant application, pre-flight email outreach, and capability statement.
+              </p>
+              <div class="text-[11px] text-emerald-400 font-mono">Engine: 10/10 Self-Improvement Directives Active ✓</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- INTERACTIVE 1-PAGE CAPABILITY STATEMENT BUILDER -->
+        <div class="glass-card rounded-3xl p-6 space-y-5 border-brand-500/40">
+          <div class="flex justify-between items-center border-b border-white/10 pb-3">
+            <div>
+              <h3 class="text-lg font-bold text-white font-heading">📄 Instant 1-Page Capability Statement Generator</h3>
+              <p class="text-xs text-zinc-400">Generate a government-ready Capability Statement PDF format for SAM.gov & agency micro-purchases.</p>
+            </div>
+            <span class="text-xs bg-brand-500/20 text-brand-300 font-mono px-3 py-1 rounded-lg">Instant Preview</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="space-y-3 text-xs">
+              <div>
+                <label class="block text-zinc-300 font-semibold mb-1">Company Legal Name / DBA</label>
+                <input id="capCompanyName" type="text" value="The Business Brainwave LLC / Sales Sensei" oninput="updateCapStatement()" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-2.5 text-white font-mono">
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <div>
+                  <label class="block text-zinc-300 font-semibold mb-1">UEI (SAM.gov)</label>
+                  <input id="capUEI" type="text" value="K9L2M4N6P8R1" oninput="updateCapStatement()" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono">
+                </div>
+                <div>
+                  <label class="block text-zinc-300 font-semibold mb-1">CAGE Code</label>
+                  <input id="capCAGE" type="text" value="8X9Y1" oninput="updateCapStatement()" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-white font-mono">
+                </div>
+              </div>
+              <div>
+                <label class="block text-zinc-300 font-semibold mb-1">Primary NAICS Codes</label>
+                <input id="capNAICS" type="text" value="541511 (SaaS/Software), 541611 (Management), 811192 (Detailing)" oninput="updateCapStatement()" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-2.5 text-white font-mono">
+              </div>
+              <div>
+                <label class="block text-zinc-300 font-semibold mb-1">Core Competencies Summary</label>
+                <textarea id="capServices" rows="3" oninput="updateCapStatement()" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl p-3 text-white font-sans">AI Sales Coaching Overlay Systems, Real-Time Speech Analytics, Micro-Grant Automation Engines, Commercial Fleet Services.</textarea>
+              </div>
+            </div>
+
+            <!-- CAPABILITY STATEMENT PREVIEW BOX -->
+            <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-5 font-mono text-xs space-y-3 text-zinc-300 overflow-y-auto max-h-80">
+              <div class="border-b border-brand-500/40 pb-2 flex justify-between items-baseline">
+                <span class="text-sm font-bold text-white font-heading" id="prevCompName">The Business Brainwave LLC</span>
+                <span class="text-[10px] text-brand-400 font-mono">CAPABILITY STATEMENT</span>
+              </div>
+              <div>
+                <span class="text-zinc-500 block text-[10px]">CORPORATE DATA:</span>
+                <div>UEI: <span class="text-emerald-400" id="prevUEI">K9L2M4N6P8R1</span> | CAGE: <span class="text-amber-400" id="prevCAGE">8X9Y1</span></div>
+                <div>NAICS: <span class="text-brand-300" id="prevNAICS">541511, 541611, 811192</span></div>
+              </div>
+              <div>
+                <span class="text-zinc-500 block text-[10px]">CORE COMPETENCIES:</span>
+                <p class="text-zinc-300 text-[11px]" id="prevServices">AI Sales Coaching Overlay Systems, Real-Time Speech Analytics, Micro-Grant Automation Engines, Commercial Fleet Services.</p>
+              </div>
+              <div>
+                <span class="text-zinc-500 block text-[10px]">DIFFERENTIATORS:</span>
+                <ul class="list-disc list-inside text-[10px] text-zinc-400 space-y-0.5">
+                  <li>Proprietary sub-2s latency AI speech analysis engine.</li>
+                  <li>SAM.gov active entity & 100% compliance record.</li>
+                  <li>Direct Micro-Purchase (<$10k) Government Purchase Card ready.</li>
+                </ul>
+              </div>
+              <button onclick="alert('📄 Capability Statement Downloaded! Ready to send to agency procurement officers.')" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-bold py-2 rounded-xl text-xs transition">
+                Download 1-Page Capability Statement PDF 📥
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- GOVERNMENT CONTRACTING 101 CHECKLIST -->
+        <div class="glass-card rounded-3xl p-8 space-y-4 border-emerald-500/40">
+          <h3 class="text-xl font-bold text-white font-heading">🏛️ Government Contracting 101: 5-Step Roadmap for Members</h3>
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-3">
+            <div class="bg-zinc-900 p-4 rounded-xl space-y-1 text-xs border border-zinc-800">
+              <span class="text-emerald-400 font-mono font-bold block">STEP 1</span>
+              <div class="font-bold text-white">SAM.gov Registration</div>
+              <p class="text-zinc-400 text-[11px]">Register for free at SAM.gov to receive your UEI & CAGE code.</p>
+            </div>
+            <div class="bg-zinc-900 p-4 rounded-xl space-y-1 text-xs border border-zinc-800">
+              <span class="text-emerald-400 font-mono font-bold block">STEP 2</span>
+              <div class="font-bold text-white">NAICS Identification</div>
+              <p class="text-zinc-400 text-[11px]">Select your primary 6-digit NAICS codes for targeted bids.</p>
+            </div>
+            <div class="bg-zinc-900 p-4 rounded-xl space-y-1 text-xs border border-zinc-800">
+              <span class="text-emerald-400 font-mono font-bold block">STEP 3</span>
+              <div class="font-bold text-white">SBA Set-Asides</div>
+              <p class="text-zinc-400 text-[11px]">Apply for 8(a), WOSB, SDVOSB, or HUBZone certifications.</p>
+            </div>
+            <div class="bg-zinc-900 p-4 rounded-xl space-y-1 text-xs border border-zinc-800">
+              <span class="text-emerald-400 font-mono font-bold block">STEP 4</span>
+              <div class="font-bold text-white">Capability Statement</div>
+              <p class="text-zinc-400 text-[11px]">Publish your 1-page PDF blueprint to agency contracting officers.</p>
+            </div>
+            <div class="bg-zinc-900 p-4 rounded-xl space-y-1 text-xs border border-zinc-800">
+              <span class="text-emerald-400 font-mono font-bold block">STEP 5</span>
+              <div class="font-bold text-white">Micro-Purchases</div>
+              <p class="text-zinc-400 text-[11px]">Win <$10k credit card orders without formal RFP bidding.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -808,6 +1025,20 @@
           <span class="text-brand-400 font-mono font-bold">${c.citations} citations</span>
         </div>
       `).join('');
+    }
+
+    function updateCapStatement() {
+      const comp = document.getElementById('capCompanyName').value || 'The Business Brainwave LLC';
+      const uei = document.getElementById('capUEI').value || 'K9L2M4N6P8R1';
+      const cage = document.getElementById('capCAGE').value || '8X9Y1';
+      const naics = document.getElementById('capNAICS').value || '541511, 541611, 811192';
+      const services = document.getElementById('capServices').value || 'AI Sales Coaching, Micro-Grant Automation Engines, Commercial Fleet Services.';
+
+      document.getElementById('prevCompName').textContent = comp;
+      document.getElementById('prevUEI').textContent = uei;
+      document.getElementById('prevCAGE').textContent = cage;
+      document.getElementById('prevNAICS').textContent = naics;
+      document.getElementById('prevServices').textContent = services;
     }
   </script>
 </body>
